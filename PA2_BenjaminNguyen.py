@@ -69,18 +69,52 @@ Sin(3.14) from math library: 0.0015926529164868282
 Difference: 0.0000008
 """
 # Task 2
-#def task2():
+def get_input():
+    str_input = input("Enter a sentence or phrase: ")
+    return str_input
+def get_num_of_letters(str_input):
+    num_of_letter = 0
+    for char in str_input:
+        if char.isalpha():
+            num_of_letter += 1
+    return num_of_letter
+def output_without_whitespace(str_input):
+    non_whitespace_str = ""
+    for char in str_input:
+        if not char.isspace():
+            non_whitespace_str += char
+    return non_whitespace_str
+def get_first(str_input):
+    get_first_str = ""
+    input_list = str_input.split()
+    for word in input_list:
+        get_first_str += word[0].upper()
+    return get_first_str
+def task2():
+    for i in range(3):
+        str_input = get_input()
+        print(f"You entered: {str_input}")
+        print(f"Total number of characters: {len(str_input)}")
+        print(f"Number of letters in the sentence: {get_num_of_letters(str_input)}")
+        print(f"String with no whitespace: {output_without_whitespace(str_input)}")
+        print(f"First letters of words in uppercase: {get_first(str_input)}")
+        print()
 
-
+"""
+# task 2 output
+You entered: The only thing we have to fear is fear itself.
+Total number of characters: 46
+Number of letters in the sentence: 36
+String with no whitespace: Theonlythingwehavetofearisfearitself.
+First letters of words in uppercase: TOTWHTFIFI
+"""
 # Task 3
 #def task3():
 
 
-"""
 def main():
-    task1()
+    #task1()
     task2()
-    task3()
+    #task3()
 if __name__ == '__main__':
     main()      # call main to run
-"""
