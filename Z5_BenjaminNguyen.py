@@ -9,11 +9,13 @@ def hideCharacters(strToReplace):
 print(hideCharacters("secret"))
 print(hideCharacters("HI"))
 """
+
 """
 # Problem 1 Output
 ******
 **
 """
+
 """
 # Problem 2
 def firstInSet(strSet, searchChar):
@@ -31,12 +33,14 @@ print(firstInSet("spring", "aeiou"))
 print(firstInSet("", "aeiou"))
 print(firstInSet("bc", "aeiou"))
 """
+
 """
 # Problem 2 Output
 3
 -1
 -1
 """
+
 """
 # Problem 3
 def printCalendar(firstDayCol, numOfDays):
@@ -62,6 +66,7 @@ def main():
     printCalendar(weekday, days)
 main()
 """
+
 """
 # Problem 3 Output
 Number of days: 31
@@ -88,7 +93,9 @@ Su Mo Tu We Th Fr Sa
 30                   
 """
 
+
 # Problem 4
+
 
 
 # Problem 4 output
@@ -97,6 +104,7 @@ Su Mo Tu We Th Fr Sa
 
 
 # Problem 5
+
 
 
 # Problem 5 Output
