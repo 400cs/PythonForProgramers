@@ -2,6 +2,8 @@
 # Assignment:  Programming Assignment #2
 # Completed (or last revision): 02/24/2024
 import math
+from sympy import isprime
+import time
 """
 # Task 1
 def task1():
@@ -25,7 +27,7 @@ def task1():
         print()
 """
 """
-# Task 1 output
+# Task 1 Output
 Test #1:
 To calculate sin(x), please enter the value of x : 0.0
 It takes 1 round of iterations to calculate sin(0.0)
@@ -68,6 +70,8 @@ Estimated result: 0.001592
 Sin(3.14) from math library: 0.0015926529164868282
 Difference: 0.0000008
 """
+
+"""
 # Task 2
 def get_input():
     str_input = input("Enter a sentence or phrase: ")
@@ -99,22 +103,74 @@ def task2():
         print(f"String with no whitespace: {output_without_whitespace(str_input)}")
         print(f"First letters of words in uppercase: {get_first(str_input)}")
         print()
-
 """
-# task 2 output
+"""
+# Task 2 Output
+Enter a sentence or phrase: The only thing we have to fear is fear itself.
 You entered: The only thing we have to fear is fear itself.
 Total number of characters: 46
 Number of letters in the sentence: 36
 String with no whitespace: Theonlythingwehavetofearisfearitself.
 First letters of words in uppercase: TOTWHTFIFI
+
+Enter a sentence or phrase: 		Hi, I am 9 years old.
+You entered: 		Hi, I am 9 years old.
+Total number of characters: 23
+Number of letters in the sentence: 13
+String with no whitespace: Hi,Iam9yearsold.
+First letters of words in uppercase: HIA9YO
+
+Enter a sentence or phrase: 100 plus 100 is 200!
+You entered: 100 plus 100 is 200!
+Total number of characters: 20
+Number of letters in the sentence: 6
+String with no whitespace: 100plus100is200!
+First letters of words in uppercase: 1P1I2
+"""
+
 """
 # Task 3
-#def task3():
+def prime_generator():
+    n = 2
+    while True:
+        if isprime(n):
+            yield (n)
+        n += 1
 
+def task3():
+    prime = prime_generator()
+    for i in range(50):
+        if i % 10 == 0:
+            print()
+        print(next(prime), end=" ")
 
+    print('\n')
+    start_time = time.time()
+    print("The 101st prime number and 1100th prime number: ", end="")
+
+    for i in range(51, 1100):
+        if i == 101 or i == 1099:
+            print(next(prime), end=" ")
+        next(prime)
+    print(f"\n{time.time() - start_time} seconds")
+"""
+"""
+# Task 3 Output
+2 3 5 7 11 13 17 19 23 29 
+31 37 41 43 47 53 59 61 67 71 
+73 79 83 89 97 101 103 107 109 113 
+127 131 137 139 149 151 157 163 167 173 
+179 181 191 193 197 199 211 223 227 229 
+
+The 101st prime number and 1100th prime number: 547 8831 
+0.0020017623901367188 seconds
+"""
+
+"""
 def main():
-    #task1()
+    task1()
     task2()
-    #task3()
+    task3()
 if __name__ == '__main__':
     main()      # call main to run
+"""
