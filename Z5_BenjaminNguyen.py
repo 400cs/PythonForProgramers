@@ -10,7 +10,7 @@ print(hideCharacters("secret"))
 print(hideCharacters("HI"))
 """
 """
-# Problem 1 output
+# Problem 1 Output
 ******
 **
 """
@@ -32,7 +32,7 @@ print(firstInSet("", "aeiou"))
 print(firstInSet("bc", "aeiou"))
 """
 """
-# Problem 2 output
+# Problem 2 Output
 3
 -1
 -1
@@ -63,7 +63,7 @@ def main():
 main()
 """
 """
-# Problem 3 output
+# Problem 3 Output
 Number of days: 31
 
 Weekday of first day (0 = Sunday): 2
@@ -88,15 +88,16 @@ Su Mo Tu We Th Fr Sa
 30                   
 """
 
+# Problem 4
+
+
+# Problem 4 output
 
 
 
 
+# Problem 5
 
 
-
-
-
-
-
+# Problem 5 Output
 
