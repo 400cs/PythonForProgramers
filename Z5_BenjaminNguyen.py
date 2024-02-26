@@ -93,19 +93,59 @@ Su Mo Tu We Th Fr Sa
 30                   
 """
 
-
+"""
 # Problem 4
+# (a) - local variables: total, avg, i, and iSquared
+# (b) - The program prints "4 16"
+# (c):
+y = 8
+def main() :
+    x = 4 # Q1: what is the scope of this x? - local to main() function 
+    x = mystery(x + 1)
+    print(s)
+def mystery(x) : # Q2: what is the scope of this x? - local to mystery() function 
+    s = 0
+    for i in range(x) : # Q3: what is the scope of i? - local to mystery() function
+        x = i + 1
+        s = s + x
+    return s
+main() # Q4: in above code, which line defines a global variable? - 1
+"""
 
-
-
-# Problem 4 output
-
-
-
-
+"""
 # Problem 5
+# (a)
+def main() :
+    print(blackBox(4))
+def blackBox(a) :
+    if a <= 0 :
+        val = 1
+    else :
+        val = a + blackBox(a - 2)
+    return val
+main()
 
+# (b)
+def printBoxes(n):
+    if n == 0:
+        return
+    print("[]", end=" ")
+    printBoxes(n - 1)
 
+n = int(input("Enter the number of box shapes or -1 to exit: "))
+while n >= 0:
+    printBoxes(n)
+    print()
+    n = int(input("Enter the number of box shapes or -1 to exit: "))
+"""
 
+"""
 # Problem 5 Output
+(a): 7
+(b):
+Enter the number of box shapes or -1 to exit: 0
 
+Enter the number of box shapes or -1 to exit: 5
+[] [] [] [] [] 
+Enter the number of box shapes or -1 to exit: -1
+"""
