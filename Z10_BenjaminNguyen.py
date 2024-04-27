@@ -32,21 +32,39 @@ class BaseballPlayer(Player):
 # Problem 2
 class Critter:
     def __init__(self):
-
+        self.position = 0
     def act(self):
-
+        self.position += 10
+    def display(self):
+        print(f"The position is {self.position}")
 
 class Bug(Critter):
     def __init__(self):
+        super().__init__()
+        self.legs = 6
+        self.canHop = True
 
     def act(self):
-
+        if self.canHop:
+            super().act()
+            super().act()
+        else:
+            super().act()
+    def display(self):
+        super().display()
+        print(f"This bug has {self.legs} legs and its ability to hop is {self.canHop}")
+    def setHop(self, status):
+        self.canHop = status
 
 class LadyBug(Bug):
     def __init__(self):
-
+        super().__init__()
+        self.canFly = True
     def act(self):
         super().act()
+    def display(self):
+        super().display()
+        print(f"This ladybug's ability to fly is {self.canFly}")
 
 
 def main():
@@ -69,10 +87,13 @@ def main():
     critters.append(Bug())
     critters.append(LadyBug())
     critters.append(Critter())
-    # add more bugs to the list ...
+    bug2 = Bug()
+    bug2.setHop(False)
+    critters.append(bug2)
     for c in critters:
         c.act()
-    # adding codes that test added methods
+        c.display()
+        print()
 
 main()
 """
@@ -88,5 +109,15 @@ Number of at bats: 10
 Number of hits: 5
 Number of home runs: 2
 The batting average is 0.5
+The position is 20
+This bug has 6 legs and its ability to hop is True
 
+The position is 20
+This bug has 6 legs and its ability to hop is True
+This ladybug's ability to fly is True
+
+The position is 10
+
+The position is 10
+This bug has 6 legs and its ability to hop is False
 """
