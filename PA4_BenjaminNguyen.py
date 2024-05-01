@@ -1,7 +1,9 @@
 # Authors: Benjamin Nguyen
 # Assignment: PA4
 # Completed (or last revision): 04/29/2024
-# Task 1: Text File Processing and Exception Handling (18 points + 5 bonus points)
+# Task 1: Text File Processing and Exception Handling
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 # 6. (Bonus, 5 pts) Draw a word cloud based on the word count frequency. You may use a word
 # cloud generator. Note: The word cloud shown below is not related to the Python.txt text file.
@@ -42,6 +44,12 @@ def task1():
     print(f"{fname} - The total number of lines are {numOfLines}, and the total number of words are {numOfWords}")
     sorted_dictOfWords = dict(sorted(dictOfWords.items(), key=lambda x:x[1], reverse=True))
     print(sorted_dictOfWords)
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(sorted_dictOfWords)
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
+    plt.close()
 
 # Task 2: Operator Overloading (15 Points)
 # (1) Define a Pair class that consists of two elements (i.e. a Pair object has two members x, y) and a
